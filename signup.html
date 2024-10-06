@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - The Last Bite</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function toggleDonorFields() {
+            const donorFields = document.getElementById('donor-fields');
+            const donorSelect = document.getElementById('donor-select');
+
+            if (donorSelect.value === 'yes') {
+                donorFields.style.display = 'block';
+            } else {
+                donorFields.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="donation-camps.html">Food Donation Camps</a></li>
+                <li><a href="food-banks.html">Food Banks Near You</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="signup-section">
+        <h1>Sign Up</h1>
+        <p>Please fill out the form below to sign up.</p>
+        <form action="#" method="post">
+            <label for="donor-select">Are you a donor?</label>
+            <select id="donor-select" name="donor-select" onchange="toggleDonorFields()" required>
+                <option value="">Select...</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+
+            <div id="donor-fields" style="display:none;">
+                <label for="donor-type">Type of Donor:</label>
+                <select id="donor-type" name="donor-type" required>
+                    <option value="">Select...</option>
+                    <option value="retailer">Retailer</option>
+                    <option value="trader">Trader</option>
+                    <option value="restaurant">Restaurant Owner</option>
+                    <option value="banquet-hall">Banquet Hall/Hotel Owner</option>
+                    <option value="household">Domestic Household</option>
+                </select>
+            </div>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="alt-phone">Alternate Contact Number:</label>
+            <input type="tel" id="alt-phone" name="alt-phone" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 The Last Bite. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
